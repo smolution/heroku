@@ -1,0 +1,16 @@
+sys
+DEFAULT_PARTIAL_ALWAYS
+CoverageConfig
+read_coverage_config
+re
+os
+collections
+configparser
+string_class
+DEFAULT_EXCLUDE
+DEFAULT_PARTIAL
+isolate_module
+HandyConfigParser
+iitems
+contract
+CoverageException

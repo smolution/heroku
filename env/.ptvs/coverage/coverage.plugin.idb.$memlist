@@ -1,0 +1,6 @@
+FileTracer
+contract
+files
+CoveragePlugin
+_needs_to_implement
+FileReporter

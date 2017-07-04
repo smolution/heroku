@@ -1,0 +1,11 @@
+OriginalProcess
+PATCHED_MARKER
+ProcessWithCoverage
+Stowaway
+multiprocessing
+patch_multiprocessing
+os
+original_bootstrap
+contract
+sys
+COVERAGE_RCFILE_ENV

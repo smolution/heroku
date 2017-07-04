@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} - Fotošrám</title>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    
+    
+</head>
+
+<body>
+    <div class="header">
+        <p class="text-center lead">Fotoateliér Šrámková</p>
+    </div>
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="/" class="navbar-brand">Fotošrám</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav pull-left">
+                            <li><a href="{{ url_for('index') }}">Home</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Galerie</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ url_for('index') }}">Interiér</a></li>
+                                    <li><a href="{{ url_for('about') }}">Exteriér</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ url_for('about') }}">Termíny focení</a></li>
+                            <li><a href="{{ url_for('about') }}">Příprava na focení</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Ceník</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ url_for('index') }}">Ateliér</a></li>
+                                    <li><a href="{{ url_for('about') }}">Svatby</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ url_for('contact') }}">Kontakt</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav pull-right">
+                            <li class="divider-vertical"></li>
+                            <li>
+                                {% if g.user.is_authenticated %}
+                                <a href="{{ url_for('logout') }}">Log Out</a>
+                                {% else %}
+                                <a href="{{ url_for('login') }}">Log In</a>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+            <div class="container body-content">
+                {% block content %}{% endblock %}
+                <hr />
+                <footer>
+                    <p>&copy; {{ year }} - Jana Šrámková</p>
+                </footer>
+            </div>
+
+            {% block scripts %}{% endblock %}
+
+</body>
+</html>
